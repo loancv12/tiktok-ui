@@ -1,9 +1,7 @@
-import myAlert from "./myAlert"
+import './GlobalStyles.scss';
 
-
-function Button(){
-    return <button onClick={myAlert}>Click me</button>
+function GlobalStyles({ children }) {
+    return children;
 }
 
-export default Button
-
+export default GlobalStyles;
