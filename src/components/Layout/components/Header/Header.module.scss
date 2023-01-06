@@ -67,8 +67,7 @@
         border-color: #c5c6c9;
     }
 }
-.search-resuls {
-}
+
 .clear,
 .loading {
     position: absolute;
@@ -98,4 +97,12 @@
     &:active {
         background-color: #e4e4e6;
     }
+}
+
+.more-btn {
+    font-size: 2rem;
+    background-color: transparent;
+    margin-left: 28px;
+    cursor: pointer;
+    padding: 4px 8px;
 }
