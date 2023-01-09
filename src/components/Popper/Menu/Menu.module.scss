@@ -27,12 +27,19 @@
     padding-bottom: 8px;
 }
 
+.menu-body {
+    // max-height: inherit;
+    overflow-y: auto;
+}
+
 // Header
 .header {
     position: relative;
     height: 50px;
     margin-top: -8px;
+    flex-shrink: 0;
 }
+
 .back-btn {
     width: 50px;
     height: 100%;
