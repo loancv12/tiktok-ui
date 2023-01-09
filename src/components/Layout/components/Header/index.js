@@ -1,5 +1,4 @@
 import classNames from 'classnames/bind';
-import images from '~/assets/images';
 import {
     faEllipsisVertical,
     faCloudUpload,
@@ -16,7 +15,10 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
+import { Link } from 'react-router-dom';
 
+import routesConfig from '~/config/routes';
+import images from '~/assets/images';
 import styles from './Header.module.scss';
 import Menu from '~/components/Popper/Menu';
 import Button from '~/components/Button';
@@ -96,10 +98,12 @@ function Header() {
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
-                <img src={images.logo} alt="tiktok" />
+                <Link to={routesConfig.home} className={cx('logo-link')}>
+                    <img src={images.logo} alt="tiktok" />
+                </Link>
                 {/* Search */}
                 <Search />
-                {/* <div className={cx('action')}>
+                <div className={cx('action')}>
                     {currentUser ? (
                         <div className={cx('current-user')}>
                             <Tippy delay={[0, 200]} content="Upload video">
@@ -116,7 +120,11 @@ function Header() {
                             </Button>
                         </>
                     )}
-                    <Menu items={currentUser ? USER_MENU : MENU_ITEM} onChange={handleMenuChange}>
+                    <Menu
+                        hideOnClick={!currentUser}
+                        items={currentUser ? USER_MENU : MENU_ITEM}
+                        onChange={handleMenuChange}
+                    >
                         {currentUser ? (
                             <Image
                                 className={cx('user-avatar')}
@@ -129,7 +137,7 @@ function Header() {
                             </button>
                         )}
                     </Menu>
-                </div> */}
+                </div>
             </div>
         </header>
     );

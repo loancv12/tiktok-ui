@@ -5,7 +5,7 @@
     --black: #000;
     --white: #fff;
     --text-color: #333;
-
+    --font-family: 'ProximaNova';
     // DefaultLayout
     --default-layout-header-height: 60px;
     --default-layout-width: 1150px;
@@ -20,7 +20,7 @@ html {
     font-size: 62.5%;
 }
 body {
-    font-family: 'ProximaNova', sans-serif;
+    font-family: var(--font-family), sans-serif;
     font-size: 1.6rem;
     line-height: 1.5rem;
     text-rendering: optimizeSpeed;
