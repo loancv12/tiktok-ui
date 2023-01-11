@@ -1,8 +1,8 @@
 import classNames from 'classnames/bind';
 import styles from './Search.module.scss';
-import * as searchServices from '~/apiServices/searchServices';
+import * as searchServices from '~/Services/searchService';
 
-import { useDecounce } from '~/hooks';
+import { useDebounce } from '~/hooks';
 import { useState, useEffect, useRef } from 'react';
 import { default as HeadlessTippy } from '@tippyjs/react/headless';
 import { Wrapper as PopperWrapper } from '~/components/Popper';
@@ -22,7 +22,7 @@ function Search() {
     // 2: h
     // 3: ho
     // 4: hoa
-    const debounced = useDecounce(searchValue, 500);
+    const debounced = useDebounce(searchValue, 500);
     const inputRef = useRef();
 
     useEffect(() => {

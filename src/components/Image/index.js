@@ -2,6 +2,7 @@ import { useState, forwardRef } from 'react';
 import images from '~/assets/images';
 import classNames from 'classnames';
 import styles from './Image.module.scss';
+
 const Image = ({ src, alt, className, fallback: customFallback = images.noImage, ...pros }, ref) => {
     const [fallback, setFallback] = useState('');
 
@@ -19,4 +20,5 @@ const Image = ({ src, alt, className, fallback: customFallback = images.noImage,
         />
     );
 };
+
 export default forwardRef(Image);
