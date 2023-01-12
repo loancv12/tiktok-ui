@@ -60,7 +60,7 @@ const MENU_ITEM = [
 ];
 
 function Header() {
-    const currentUser = true;
+    const currentUser = false;
 
     // hanlde logix
     const handleMenuChange = (menuItem) => {

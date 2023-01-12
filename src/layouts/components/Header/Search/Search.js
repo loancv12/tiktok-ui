@@ -22,7 +22,7 @@ function Search() {
     // 2: h
     // 3: ho
     // 4: hoa
-    const debounced = useDebounce(searchValue, 500);
+    const debouncedValue = useDebounce(searchValue, 500);
     const inputRef = useRef();
 
     useEffect(() => {
@@ -39,12 +39,12 @@ function Search() {
         setLoading(true);
         const fetchAPI = async () => {
             setLoading(true);
-            const results = await searchServices.search(debounced);
+            const results = await searchServices.search(debouncedValue);
             setSearchResult(results);
             setLoading(false);
         };
         fetchAPI();
-    }, [debounced]);
+    }, [debouncedValue]);
     const handleHideResult = () => {
         setShowResult(false);
     };
